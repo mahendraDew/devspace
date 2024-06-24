@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  devspace-db:
+    image: postgres
+    restart: always
+    container_name: devspace-db
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: devspace_db
+      PGDATA: /data/postgres
+    volumes:
+      - postgres:/data/postgres
+
+volumes:
+  postgres:
