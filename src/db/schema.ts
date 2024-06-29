@@ -4,12 +4,14 @@ import {
   pgTable,
   text,
   primaryKey,
-  integer
+  integer,
+  uuid
 } from 'drizzle-orm/pg-core'
 
 import postgres from 'postgres'
 import { drizzle } from 'drizzle-orm/postgres-js'
 import type { AdapterAccount } from 'next-auth/adapters'
+import { sql } from 'drizzle-orm'
 
 export const testing = pgTable('testing', {
   id: text('id').notNull().primaryKey(),
@@ -77,23 +79,36 @@ export const verificationTokens = pgTable(
   })
 )
 
-export const authenticators = pgTable(
-  'authenticator',
-  {
-    credentialID: text('credentialID').notNull().unique(),
-    userId: text('userId')
-      .notNull()
-      .references(() => users.id, { onDelete: 'cascade' }),
-    providerAccountId: text('providerAccountId').notNull(),
-    credentialPublicKey: text('credentialPublicKey').notNull(),
-    counter: integer('counter').notNull(),
-    credentialDeviceType: text('credentialDeviceType').notNull(),
-    credentialBackedUp: boolean('credentialBackedUp').notNull(),
-    transports: text('transports')
-  },
-  authenticator => ({
-    compositePK: primaryKey({
-      columns: [authenticator.userId, authenticator.credentialID]
-    })
-  })
-)
+// export const authenticators = pgTable(
+//   'authenticator',
+//   {
+//     credentialID: text('credentialID').notNull().unique(),
+//     userId: text('userId')
+//       .notNull()
+//       .references(() => users.id, { onDelete: 'cascade' }),
+//     providerAccountId: text('providerAccountId').notNull(),
+//     credentialPublicKey: text('credentialPublicKey').notNull(),
+//     counter: integer('counter').notNull(),
+//     credentialDeviceType: text('credentialDeviceType').notNull(),
+//     credentialBackedUp: boolean('credentialBackedUp').notNull(),
+//     transports: text('transports')
+//   },
+//   authenticator => ({
+//     compositePK: primaryKey({
+//       columns: [authenticator.userId, authenticator.credentialID]
+//     })
+//   })
+// )
+
+export const space = pgTable('space', {
+  id: uuid('id').default(sql`gen_random_uuid()`).notNull().primaryKey(),
+  userId: text('userId')
+    .notNull()
+    .references(() => users.id, { onDelete: 'cascade' }),
+  name: text('name').notNull(),
+  description: text('description').notNull(),
+  language: text('language').notNull(),
+  githubRepo: text('githubRepo'),
+})
+
+export type Space = typeof space.$inferSelect;

@@ -2,14 +2,14 @@ import { db } from "@/src/db";
 
 export default async function Home() {
 
-  const items = await db.query.testing.findMany();
+  const spaces = await db.query.space.findMany();
 
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
      {
-      items.map((item) =>{
-        return <div key={item.id}>{item.name}</div>
+      spaces.map((space) =>{
+        return <div key={space.id}>{space.name}</div>
       })
      }
     </main>
