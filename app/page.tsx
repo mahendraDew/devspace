@@ -13,6 +13,7 @@ import { Space, sessions } from '@/src/db/schema'
 import { GithubIcon } from 'lucide-react'
 import { getSpaceSession } from '@/src/services/space-session'
 import { SplitTags, TagsList } from '@/src/components/tags-list'
+import { SearchBar } from './search-bar'
 
 
 function SpaceCard ({space}: {space: Space}) {
@@ -40,8 +41,8 @@ function SpaceCard ({space}: {space: Space}) {
   )
 }
 
-export default async function Home () {
-  const spaces = await getSpaceSession();
+export default async function Home ({searchParams}: {searchParams: {search: string}}) {
+  const spaces = await getSpaceSession(searchParams.search);
 
   return (
     <main className=' min-h-screen justify-between p-24'>
@@ -50,6 +51,9 @@ export default async function Home () {
         <Button asChild>
           <Link href='/create-space'>create room</Link>
         </Button>
+      </div>
+      <div className="mb-12">
+        <SearchBar />
       </div>
 
       <div className="grid grid-cols-3 gap-4">

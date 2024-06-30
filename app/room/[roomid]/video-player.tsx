@@ -2,6 +2,7 @@
 import {
   Call,
   CallControls,
+  CallParticipantsList,
   SpeakerLayout,
   StreamCall,
   StreamTheme,
@@ -13,6 +14,7 @@ import React, { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 import { Space } from '@/src/db/schema'
 import { generateTokenAction } from './actions';
+import { useRouter } from 'next/navigation';
 
 const apiKey = process.env.NEXT_PUBLIC_GET_STREAM_API_KEY!
 // const token = ''
@@ -22,6 +24,8 @@ export function DevspaceVideo ({space}: {space: Space}) {
 
   const [client, setClient] = useState<StreamVideoClient | null>(null)
   const [call, setCall] = useState<Call | null>(null)
+
+  const router = useRouter();
 
   useEffect(() => {
     if(!space){
@@ -36,6 +40,8 @@ export function DevspaceVideo ({space}: {space: Space}) {
       apiKey,
       user: {
         id: userId,
+        name: session.data?.user?.name ?? undefined,
+        image: session.data?.user?.image ?? undefined,
       },
       tokenProvider: () => generateTokenAction(),
       // token,
@@ -46,18 +52,20 @@ export function DevspaceVideo ({space}: {space: Space}) {
     setCall(call)
 
     return () => {
-      call.leave();
-      client.disconnectUser();
+      call.leave().then(() => client.disconnectUser()).catch(console.error);
     };
   }, [session, space])
   return (
     client &&
     call && (
-      <StreamVideo client={client}>
+      <StreamVideo client={client} >
         <StreamTheme >
           <StreamCall call={call}>
             <SpeakerLayout />
-            <CallControls />
+            <CallControls onLeave={() =>{
+              router.push("/");
+            }}/>
+            <CallParticipantsList  onClose={()=>undefined} />
           </StreamCall>
         </StreamTheme>
       </StreamVideo>

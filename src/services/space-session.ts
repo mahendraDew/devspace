@@ -1,12 +1,15 @@
 import { db } from '@/src/db'
-import { eq } from 'drizzle-orm';
+import { eq, like } from 'drizzle-orm';
 import { unstable_noStore } from 'next/cache'
 import { space } from '../db/schema';
 
 
-export async function getSpaceSession(){
+export async function getSpaceSession(search: string | undefined){
     unstable_noStore();
-    const spaces = await db.query.space.findMany()
+    const where = search ? like(space.tags, `%${search}%`) : undefined;
+    const spaces = await db.query.space.findMany({
+        where,
+    })
     return spaces
 }
 
