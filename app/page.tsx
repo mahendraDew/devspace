@@ -12,8 +12,9 @@ import {
 import { Space, sessions } from '@/src/db/schema'
 import { GithubIcon } from 'lucide-react'
 import { getSpaceSession } from '@/src/services/space-session'
-import { SplitTags, TagsList } from '@/src/components/tags-list'
+import {  TagsList } from '@/src/components/tags-list'
 import { SearchBar } from './search-bar'
+import { SplitTags } from '@/lib/utils'
 
 
 function SpaceCard ({space}: {space: Space}) {

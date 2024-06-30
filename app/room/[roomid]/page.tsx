@@ -2,8 +2,9 @@ import { getRoom } from "@/src/services/space-session"
 import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge"
-import { SplitTags, TagsList } from "@/src/components/tags-list";
+import { TagsList } from "@/src/components/tags-list";
 import { DevspaceVideo } from "./video-player";
+import { SplitTags } from "@/lib/utils";
 // import { space } from "@/src/db/schema";
  
 
