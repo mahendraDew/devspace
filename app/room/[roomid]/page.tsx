@@ -3,40 +3,43 @@ import { GithubIcon } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge"
 import { SplitTags, TagsList } from "@/src/components/tags-list";
-
+import { DevspaceVideo } from "./video-player";
+// import { space } from "@/src/db/schema";
+ 
 
 export default async function roomPage(props:{params: {roomid: string}}) {
     const roomId = props.params.roomid
-    const room = await getRoom(roomId);
+    const space = await getRoom(roomId);
 
-    if(!room){
+    if(!space){
         return <div> ooppss!! no room of this ID found</div>
     }
 
-    const tags = room.tags.split(",").map((tag) => tag.trim());
+    const tags = space.tags.split(",").map((tag) => tag.trim());
 
     return (
         <div className="grid grid-cols-4 min-h-screen">
           <div className="col-span-3 p-4 pr-2">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4 min-h-screen">
               {/* <DevFinderVideo room={room} /> */}
+               <DevspaceVideo space={space}/>
             </div>
           </div>
     
           <div className="col-span-1 p-4 pl-2">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4 flex flex-col gap-4">
-              <h1 className="text-base">{room?.name}</h1>
+              <h1 className="text-base">{space?.name}</h1>
     
              
     
-              <p className="text-base text-gray-600">{room?.description}</p>
+              <p className="text-base text-gray-600">{space?.description}</p>
 
                
-              <TagsList tags={SplitTags(room.tags)} />
+              <TagsList tags={SplitTags(space.tags)} />
 
-              {room.githubRepo && (
+              {space.githubRepo && (
                 <Link
-                  href={room.githubRepo}
+                  href={space.githubRepo}
                   className="flex items-center gap-2 text-center text-sm"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -12,8 +12,7 @@ export async function getSpaceSession(){
 
 export async function getRoom(roomId: string){
     unstable_noStore();
-    const room = await db.query.space.findFirst({
+    return await db.query.space.findFirst({
         where: eq(space.id, roomId)
     });
-    return room;
 }
