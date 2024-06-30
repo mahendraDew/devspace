@@ -21,7 +21,7 @@ import { useRouter } from "next/navigation"
 const formSchema = z.object({
   name: z.string().min(1).max(50),
   description: z.string().min(1).max(250),
-  language: z.string().min(1).max(50),
+  tags: z.string().min(1).max(50),
   githubRepo: z.string().min(1).max(50),
 })
 
@@ -34,7 +34,7 @@ export function CreateSpaceForm () {
     defaultValues: {
       name: "",
       description: "",
-      language: "",
+      tags: "",
       githubRepo: "",
     }
   })
@@ -55,7 +55,7 @@ export function CreateSpaceForm () {
           <FormItem>
             <FormLabel>Name</FormLabel>
             <FormControl>
-              <Input {...field} />
+              <Input {...field} placeholder="devspace - a pair programming platform"/>
             </FormControl>
             <FormDescription>
               This is your public Space name.
@@ -71,7 +71,7 @@ export function CreateSpaceForm () {
           <FormItem>
             <FormLabel>Description</FormLabel>
             <FormControl>
-              <Input  {...field} />
+              <Input  {...field} placeholder="I'm working on a side project called devspace where you can find fellow developers to pair program with, come join me!"/>
             </FormControl>
             <FormDescription>
               Please describe what you"ll be working on.
@@ -82,15 +82,15 @@ export function CreateSpaceForm () {
       />
       <FormField
         control={form.control}
-        name="language"
+        name="tags"
         render={({ field }) => (
           <FormItem>
             <FormLabel>Programming Language</FormLabel>
             <FormControl>
-              <Input  {...field} />
+              <Input  {...field} placeholder="javascript, typescript, reactjs, nextjs, tailwindCSS"/>
             </FormControl>
             <FormDescription>
-              List down the primary programming language you"ll be working with
+            List your programming languages, frameworks, libraries so people can find your room
             </FormDescription>
             <FormMessage />
           </FormItem>
@@ -103,7 +103,7 @@ export function CreateSpaceForm () {
           <FormItem>
             <FormLabel>Github Repo</FormLabel>
             <FormControl>
-              <Input  {...field} />
+              <Input  {...field} placeholder="https://github.com/mahendradew/<project-name>"/>
             </FormControl>
             <FormDescription>
               Please put a line to the project you are be working on.

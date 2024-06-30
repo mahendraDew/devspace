@@ -12,6 +12,7 @@ import {
 import { Space, sessions } from '@/src/db/schema'
 import { GithubIcon } from 'lucide-react'
 import { getSpaceSession } from '@/src/services/space-session'
+import { SplitTags, TagsList } from '@/src/components/tags-list'
 
 
 function SpaceCard ({space}: {space: Space}) {
@@ -20,15 +21,18 @@ function SpaceCard ({space}: {space: Space}) {
       <CardHeader>
         <CardTitle>{space.name}</CardTitle>
         <CardDescription>{space.description}</CardDescription>
+        
+
       </CardHeader>
       <CardContent >
-        {space.githubRepo && <Link href={space.githubRepo} className='flex items-center gap-2' target='_blank' rel='noopener noreferrer'><GithubIcon /> Github URL</Link>
+        <TagsList tags={SplitTags(space.tags)} />
+        {space.githubRepo && <Link href={space.githubRepo} className='flex items-center gap-2 mt-4' target='_blank' rel='noopener noreferrer'><GithubIcon /> Github URL</Link>
         }
       </CardContent>
       <CardFooter>
           <Button asChild>
             <Link href={`/room/${space.id}`}>
-              join space
+              join room
             </Link>
           </Button>
       </CardFooter>
@@ -42,9 +46,9 @@ export default async function Home () {
   return (
     <main className=' min-h-screen justify-between p-24'>
       <div className='flex justify-between items-center mb-8'>
-        <h1 className='text-4xl'>find dev SPACE</h1>
+        <h1 className='text-4xl'>find dev <span className='text-blue-600 font-semibold'> rooms</span></h1>
         <Button asChild>
-          <Link href='/create-space'>create space</Link>
+          <Link href='/create-space'>create room</Link>
         </Button>
       </div>
 
