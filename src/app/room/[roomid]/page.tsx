@@ -1,14 +1,15 @@
 import { getRoom } from "@/src/services/space-session"
 import { GithubIcon } from "lucide-react";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge"
-import { TagsList } from "@/src/components/tags-list";
 import { DevspaceVideo } from "./video-player";
-import { SplitTags } from "@/lib/utils";
+import { SplitTags } from "@/src/lib/utils";
+import { unstable_noStore } from "next/cache";
+import { TagsList } from "@/src/components/tags-list";
 // import { space } from "@/src/db/schema";
  
 
 export default async function roomPage(props:{params: {roomid: string}}) {
+    unstable_noStore();
     const roomId = props.params.roomid
     const space = await getRoom(roomId);
 
@@ -16,7 +17,7 @@ export default async function roomPage(props:{params: {roomid: string}}) {
         return <div> ooppss!! no room of this ID found</div>
     }
 
-    const tags = space.tags.split(",").map((tag) => tag.trim());
+    // const tags = space.tags.split(",").map((tag) => tag.trim());
 
     return (
         <div className="grid grid-cols-4 min-h-screen">
@@ -30,12 +31,8 @@ export default async function roomPage(props:{params: {roomid: string}}) {
           <div className="col-span-1 p-4 pl-2">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4 flex flex-col gap-4">
               <h1 className="text-base">{space?.name}</h1>
-    
-             
-    
               <p className="text-base text-gray-600">{space?.description}</p>
 
-               
               <TagsList tags={SplitTags(space.tags)} />
 
               {space.githubRepo && (

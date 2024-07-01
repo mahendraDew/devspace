@@ -1,6 +1,6 @@
 'use server'
 
-import { getSession } from "@/lib/auth"
+import { getSession } from "@/src/lib/auth"
 import { StreamChat } from "stream-chat"
 
 export async function generateTokenAction(){

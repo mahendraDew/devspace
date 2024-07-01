@@ -35,7 +35,7 @@ export function DevspaceVideo ({space}: {space: Space}) {
       return
     }
     const userId = session.data?.user?.id;
-    console.log("userId", userId)
+    // console.log("userId", userId)
     const client = new StreamVideoClient({
       apiKey,
       user: {
@@ -72,8 +72,4 @@ export function DevspaceVideo ({space}: {space: Space}) {
      
     )
   )
-}
-
-function getSpaceSession () {
-  throw new Error('Function not implemented.')
 }

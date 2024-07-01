@@ -26,8 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/mode-toggle.tsx", // Add the missing file
-    "src/components/theme-provider.tsx" // Add the missing file
+    "components/mode-toggle.tsx", // Add the missing file
+    "components/theme-provider.tsx" // Add the missing file
   ],
   "exclude": ["node_modules"]
 }

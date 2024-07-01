@@ -2,10 +2,10 @@ import { db } from '@/src/db'
 import { eq, like } from 'drizzle-orm';
 import { unstable_noStore } from 'next/cache'
 import { space } from '../db/schema';
+import { getSession } from '@/src/lib/auth';
 
-
+//get rooms
 export async function getSpaceSession(search: string | undefined){
-    unstable_noStore();
     const where = search ? like(space.tags, `%${search}%`) : undefined;
     const spaces = await db.query.space.findMany({
         where,
@@ -13,9 +13,26 @@ export async function getSpaceSession(search: string | undefined){
     return spaces
 }
 
+//get user rooms
+export async function getUserRooms(){
+    const session = await getSession();
+    if(!session){
+        throw new Error('User not authenticated');
+    }
+    const spaces = await db.query.space.findMany({
+        where: eq(space.userId, session.user.id),
+    });
+    return spaces
+}
+
+//get room
 export async function getRoom(roomId: string){
-    unstable_noStore();
     return await db.query.space.findFirst({
         where: eq(space.id, roomId)
     });
+}
+
+//delete room
+export async function deleteRoom(roomId: string){
+    await db.delete(space).where(eq(space.id, roomId));
 }

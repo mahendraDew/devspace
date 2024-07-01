@@ -1,18 +1,12 @@
 'use client'
-import { ModeToggle } from '@/src/components/mode-toggle'
-import { Button } from '@/src/components/ui/button'
 import { useSession, signIn, signOut } from 'next-auth/react'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
 import { LogInIcon, LogOutIcon, User } from 'lucide-react'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import Link from 'next/link'
+import { DropdownMenu, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu'
+import { Button } from '../components/ui/button'
+import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
+import { DropdownMenuContent, DropdownMenuItem } from '../components/ui/dropdown-menu'
+import { ModeToggle } from '../components/mode-toggle'
 
 function AccountDropdown () {
   const session = useSession()
@@ -48,6 +42,9 @@ export function Header () {
     <header className='bg-gray-100 py-4 dark:bg-gray-900 '>
       <div className='container mx auto flex justify-between items-center'>
         <Link href="/" className='font-bold text-4xl text-neutral-800 dark:text-neutral-200' >_dev<span className='text-blue-600'>space</span></Link>
+        <nav>
+          <Link className='hover:underline' href={"/user-rooms"}>Your Rooms</Link>
+        </nav>
         <div className='flex items-center gap-4'>
           {session.data &&
           <AccountDropdown />}

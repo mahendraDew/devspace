@@ -1,7 +1,7 @@
 'use client';
-import { badgeVariants } from "@/components/ui/badge";
-import { cn } from "@/lib/utils";
+import { cn } from "@/src/lib/utils";
 import { useRouter } from "next/navigation";
+import { badgeVariants } from "./ui/badge";
 
 
 export function TagsList({tags}: {tags: string[]}){
