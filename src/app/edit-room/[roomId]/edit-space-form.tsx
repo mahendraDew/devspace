@@ -5,11 +5,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 
 
-import { createSpaceAction } from './actions'
-import { useRouter } from 'next/navigation'
+import { EditSpaceAction } from './actions'
+import { useParams, useRouter } from 'next/navigation'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/src/components/ui/form'
 import { Button } from '@/src/components/button'
 import { Input } from '@/src/components/ui/input'
+import { Space } from '@/src/db/schema'
 
 const formSchema = z.object({
   name: z.string().min(1).max(50),
@@ -18,23 +19,26 @@ const formSchema = z.object({
   githubRepo: z.string().min(1).max(50)
 })
 
-export function CreateSpaceForm () {
+export function EditSpaceForm ({room}:{room: Space}) {
   const router = useRouter()
-
+  const params = useParams();
+  
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      name: '',
-      description: '',
-      tags: '',
-      githubRepo: ''
+      name: room.name,
+      description: room.description,
+      tags: room.tags,
+      githubRepo: room.githubRepo ?? "",
     }
   })
   // 2. Define a submit handler.
   async function onSubmit (values: z.infer<typeof formSchema>) {
-    await createSpaceAction(values)
-    router.push('/')
+    await EditSpaceAction({
+      id: params.roomId as string,
+      ...values
+    });
   }
 
   return (

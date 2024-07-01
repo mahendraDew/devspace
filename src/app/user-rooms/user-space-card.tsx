@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Space } from '@/src/db/schema'
-import { GithubIcon, Trash2 } from 'lucide-react'
+import { GithubIcon, PencilIcon, Trash2 } from 'lucide-react'
 import { SplitTags } from '@/src/lib/utils'
 import { deleteRoomAction } from './actions';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/src/components/ui/alert-dialog';
@@ -32,10 +32,11 @@ export function UserSpaceCard ({space}: {space: Space}) {
               join room
             </Link>
           </Button>
-          
+          <Button size="icon" ><Link href={`/edit-room/${space.id}`}><PencilIcon /></Link></Button>
           <AlertDialog>
             <AlertDialogTrigger asChild>
-             <Button variant={"destructive"} ><Trash2 /></Button>
+             <Button variant={"destructive"} size="icon" ><Trash2 /></Button>
+             
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>

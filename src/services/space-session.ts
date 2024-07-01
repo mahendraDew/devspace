@@ -1,7 +1,7 @@
 import { db } from '@/src/db'
 import { eq, like } from 'drizzle-orm';
 import { unstable_noStore } from 'next/cache'
-import { space } from '../db/schema';
+import { Space, space } from '../db/schema';
 import { getSession } from '@/src/lib/auth';
 
 //get rooms
@@ -35,4 +35,14 @@ export async function getRoom(roomId: string){
 //delete room
 export async function deleteRoom(roomId: string){
     await db.delete(space).where(eq(space.id, roomId));
+}
+
+//create room
+export async function createRoom(spaceData: Omit<Space, 'id' | 'userId'>, userId: string){
+    await db.insert(space).values({...spaceData, userId});
+}
+
+//edit room
+export async function editRoom(spaceData: Space){
+    await db.update(space).set(spaceData).where(eq(space.id, spaceData.id));
 }
