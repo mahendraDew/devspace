@@ -3,6 +3,7 @@ import { getUserRooms } from '@/src/services/space-session'
 import { UserSpaceCard } from './user-space-card';
 import { unstable_noStore } from 'next/cache';
 import { Button } from '@/src/components/button';
+import Image from 'next/image';
 
 
 export default async function UsersRoomPage () {
@@ -24,6 +25,18 @@ export default async function UsersRoomPage () {
           return <UserSpaceCard key={space.id} space={space} />
         })}
       </div>
+
+
+      {spaces.length === 0 && (
+          <div className='flex flex-col gap-4 justify-center items-center mt-24'>
+            
+            <Image src='/notfound.svg' width={200} height={200} alt='no data imgage'/>
+            <h2 className='text-2xl'>You have No Rooms!!</h2>
+            <Button asChild>
+              <Link href='/create-room'>create room</Link>
+            </Button>
+          </div>
+        )}
     </main>
   )
 }

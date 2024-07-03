@@ -13,10 +13,6 @@ import { drizzle } from 'drizzle-orm/postgres-js'
 import type { AdapterAccount } from 'next-auth/adapters'
 import { sql } from 'drizzle-orm'
 
-export const testing = pgTable('testing', {
-  id: text('id').notNull().primaryKey(),
-  name: text('name')
-})
 
 const connectionString = process.env.DATABASE_URL as string
 const pool = postgres(connectionString, { max: 1 })

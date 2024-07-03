@@ -1,17 +1,55 @@
 'use client'
 import { useSession, signIn, signOut } from 'next-auth/react'
-import { LogInIcon, LogOutIcon, User } from 'lucide-react'
+import { LogInIcon, LogOutIcon, Trash2, User, UserX } from 'lucide-react'
 import Link from 'next/link'
 import { DropdownMenu, DropdownMenuTrigger } from '@radix-ui/react-dropdown-menu'
 import { Button } from '../components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '../components/ui/avatar'
 import { DropdownMenuContent, DropdownMenuItem } from '../components/ui/dropdown-menu'
 import { ModeToggle } from '../components/mode-toggle'
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger
+} from '@/src/components/ui/alert-dialog'
+import { useState } from 'react'
+import { deleteAccountAction } from './deleteAccountActions'
+import { sign } from 'crypto'
 
 function AccountDropdown () {
-  const session = useSession()
+  const session = useSession();
+  const [open, setOpen] = useState(false)
 
   return (
+    <>
+    <AlertDialog open={open} onOpenChange={setOpen}>
+          
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+              <AlertDialogDescription>
+                This action cannot be undone. This will permanently delete remove your account and all associated data.
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction
+                onClick={async () => {
+                  await deleteAccountAction();
+                  signOut({callbackUrl: '/'});
+                }}
+              >
+                Delete My Account
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant={'outline'}>
@@ -31,8 +69,14 @@ function AccountDropdown () {
             })}>
               <LogOutIcon className='mr-2' /> SignOut
             </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => {
+                  setOpen(true);
+            }}>
+              <UserX className='mr-2' /> Delete Account
+            </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+    </>
   )
 }
 
