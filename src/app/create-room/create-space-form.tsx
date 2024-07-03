@@ -10,6 +10,9 @@ import { useRouter } from 'next/navigation'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/src/components/ui/form'
 import { Button } from '@/src/components/button'
 import { Input } from '@/src/components/ui/input'
+import { useToast } from '@/components/ui/use-toast'
+import NextTopLoader from 'nextjs-toploader'
+
 
 const formSchema = z.object({
   name: z.string().min(1).max(50),
@@ -19,9 +22,9 @@ const formSchema = z.object({
 })
 
 export function CreateSpaceForm () {
+  const { toast } = useToast();
   const router = useRouter()
 
-  // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -31,10 +34,14 @@ export function CreateSpaceForm () {
       githubRepo: ''
     }
   })
-  // 2. Define a submit handler.
   async function onSubmit (values: z.infer<typeof formSchema>) {
-    await createSpaceAction(values)
-    router.push('/user-rooms')
+    const room = await createSpaceAction(values);
+    toast({
+      title: "New Room Created",
+      description: "Your room was successfully created.",
+    });
+    
+    router.push(`/room/${room.id}`);
   }
 
   return (

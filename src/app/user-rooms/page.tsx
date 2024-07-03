@@ -12,9 +12,9 @@ export default async function UsersRoomPage () {
   return (
     <main className=' min-h-screen justify-between p-24'>
       <div className='flex justify-between items-center mb-8'>
-        <h1 className='text-4xl'>my <span className='text-blue-600 font-semibold'> rooms</span></h1>
+        <h1 className='text-4xl'>my <span className='text-indigo-600 font-semibold'> rooms</span></h1>
         <Button asChild>
-          <Link href='/create-space'>create room</Link>
+          <Link href='/create-room'>create room</Link>
         </Button>
       </div>
       

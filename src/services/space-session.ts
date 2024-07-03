@@ -39,10 +39,12 @@ export async function deleteRoom(roomId: string){
 
 //create room
 export async function createRoom(spaceData: Omit<Space, 'id' | 'userId'>, userId: string){
-    await db.insert(space).values({...spaceData, userId});
+    const inserted = await db.insert(space).values({...spaceData, userId}).returning();
+    return inserted[0];
 }
 
 //edit room
 export async function editRoom(spaceData: Space){
-    await db.update(space).set(spaceData).where(eq(space.id, spaceData.id));
+    const updated = await db.update(space).set(spaceData).where(eq(space.id, spaceData.id)).returning();
+    return updated[0];
 }

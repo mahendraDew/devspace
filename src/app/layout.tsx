@@ -5,6 +5,7 @@ import { Header } from './header'
 import NextTopLoader from 'nextjs-toploader';
 import SessionWrapper from '../components/SessionWrapper';
 import { ThemeProvider } from '../components/theme-provider';
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,10 +29,12 @@ export default function RootLayout ({
             enableSystem
             disableTransitionOnChange
           >
+            <Toaster />
              <NextTopLoader />
            <Header />
-          
+          <div className='container mx-auto'>
             {children}
+          </div>
           </ThemeProvider>
         </body>
       </SessionWrapper>

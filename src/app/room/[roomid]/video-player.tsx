@@ -35,7 +35,6 @@ export function DevspaceVideo ({space}: {space: Space}) {
       return
     }
     const userId = session.data?.user?.id;
-    // console.log("userId", userId)
     const client = new StreamVideoClient({
       apiKey,
       user: {
@@ -62,8 +61,8 @@ export function DevspaceVideo ({space}: {space: Space}) {
         <StreamTheme >
           <StreamCall call={call}>
             <SpeakerLayout />
-            <CallControls onLeave={() =>{
-              router.push("/");
+            <CallControls onLeave={() =>{space.userId === session.data?.user?.id ? router.push("/user-rooms") :
+              router.push("/browse");
             }}/>
             <CallParticipantsList  onClose={()=>undefined} />
           </StreamCall>

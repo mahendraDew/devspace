@@ -44,9 +44,9 @@ export function Header () {
       <div className='container mx auto flex justify-between items-center'>
         <Link href="/" className='font-bold text-4xl text-neutral-800 dark:text-neutral-200' >_dev<span className='text-indigo-600'>space</span></Link>
         {isLoggedIn && (
-          <div className='flex gap-4'>
-            <Link className='hover:underline' href={"/browse"}>Browse</Link>
-            <Link className='hover:underline' href={"/user-rooms"}>Your Rooms</Link>
+          <div className='flex gap-8'>
+            <Link className='hover:underline' href={"/browse"}>browse</Link>
+            <Link className='hover:underline' href={"/user-rooms"}>my Rooms</Link>
           </div>
         )}
         <div className='flex items-center gap-4'>

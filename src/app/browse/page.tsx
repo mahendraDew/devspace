@@ -13,7 +13,7 @@ export default async function Home ({searchParams}: {searchParams: {search: stri
   return (
     <main className=' min-h-screen justify-between p-24'>
       <div className='flex justify-between items-center mb-8'>
-        <h1 className='text-4xl'>find dev <span className='text-blue-600 font-semibold'> rooms</span></h1>
+        <h1 className='text-4xl'>find dev <span className='text-indigo-600 font-semibold'> rooms</span></h1>
         <Button asChild>
           <Link href='/create-room'>create room</Link>
         </Button>

@@ -11,7 +11,8 @@ export async function createSpaceAction(spaceData: Omit<Space, "id" | "userId">)
     if(!session){
         throw new Error("you must be logged in to create this space");
     }
-    await createRoom(spaceData, session.user.id);
+    const room = await createRoom(spaceData, session.user.id);
 
     revalidatePath("/");
+    return room;
 }
