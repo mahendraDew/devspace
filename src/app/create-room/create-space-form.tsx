@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation'
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/src/components/ui/form'
 import { Button } from '@/src/components/button'
 import { Input } from '@/src/components/ui/input'
-import { useToast } from '@/components/ui/use-toast'
+import { useToast } from '@/src/components/ui/use-toast'
 import NextTopLoader from 'nextjs-toploader'
 
 

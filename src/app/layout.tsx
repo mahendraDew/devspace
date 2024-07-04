@@ -5,7 +5,7 @@ import { Header } from './header'
 import NextTopLoader from 'nextjs-toploader';
 import SessionWrapper from '../components/SessionWrapper';
 import { ThemeProvider } from '../components/theme-provider';
-import { Toaster } from "@/components/ui/toaster"
+import { Toaster } from "@/src/components/ui/toaster"
 
 const inter = Inter({ subsets: ['latin'] })
 

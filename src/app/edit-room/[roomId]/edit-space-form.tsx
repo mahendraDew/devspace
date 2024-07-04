@@ -11,7 +11,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Button } from '@/src/components/button'
 import { Input } from '@/src/components/ui/input'
 import { Space } from '@/src/db/schema'
-import { toast } from '@/components/ui/use-toast'
+import { toast } from '@/src/components/ui/use-toast'
 
 const formSchema = z.object({
   name: z.string().min(1).max(50),
