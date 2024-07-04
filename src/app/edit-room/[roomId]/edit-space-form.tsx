@@ -79,7 +79,7 @@ export function EditSpaceForm ({room}:{room: Space}) {
                 />
               </FormControl>
               <FormDescription>
-                Please describe what you"ll be working on.
+                Please describe what you`&quot;`ll be working on.
               </FormDescription>
               <FormMessage />
             </FormItem>
