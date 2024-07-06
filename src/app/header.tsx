@@ -97,7 +97,7 @@ export function Header () {
           {isLoggedIn &&
           <AccountDropdown />}
           {!isLoggedIn &&
-            <Button onClick={() => signIn("github")} variant='outline'>
+            <Button onClick={() => signIn("github", { callbackUrl: '/browse' })} variant='outline'>
               <LogInIcon className='mr-2' /> Sign In
             </Button>
           }
