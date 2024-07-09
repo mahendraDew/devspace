@@ -6,6 +6,7 @@ import NextTopLoader from 'nextjs-toploader';
 import SessionWrapper from '../components/SessionWrapper';
 import { ThemeProvider } from '../components/theme-provider';
 import { Toaster } from "@/src/components/ui/toaster"
+import { Footer } from './footer';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,7 @@ export default function RootLayout ({
   return (
     <html lang='en' suppressHydrationWarning>
       <SessionWrapper>
-        <body className={inter.className}>
+       <body className={`${inter.className} bg-gray-200 dark:bg-slate-950`}>
           <ThemeProvider
             attribute='class'
             defaultTheme='system'
@@ -32,9 +33,10 @@ export default function RootLayout ({
             <Toaster />
              <NextTopLoader />
            <Header />
-          <div className='container mx-auto'>
+          <div className='container mx-auto '>
             {children}
           </div>
+            <Footer />
           </ThemeProvider>
         </body>
       </SessionWrapper>
