@@ -23,7 +23,7 @@ export default function RootLayout ({
   return (
     <html lang='en' suppressHydrationWarning>
       <SessionWrapper>
-       <body className={`${inter.className} bg-gray-200 dark:bg-slate-950`}>
+       <body className={`${inter.className} bg-gray-200 dark:bg-black`}>
           <ThemeProvider
             attribute='class'
             defaultTheme='system'
@@ -33,7 +33,7 @@ export default function RootLayout ({
             <Toaster />
              <NextTopLoader />
            <Header />
-          <div className='container mx-auto '>
+          <div className='mx-auto '>
             {children}
           </div>
             <Footer />
