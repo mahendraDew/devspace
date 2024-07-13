@@ -652,22 +652,7 @@ export const OptionKey = ({ className }: { className: string }) => {
 
 const AceternityLogo = () => {
   return (
-    // <svg
-    //   width="66"
-    //   height="65"
-    //   viewBox="0 0 66 65"
-    //   fill="none"
-    //   xmlns="http://www.w3.org/2000/svg"
-    //   className="h-3 w-3 text-white bg-blue-300"
-    // >
-    //   <path
-    //     d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
-    //     stroke="currentColor"
-    //     strokeWidth="15"
-    //     strokeMiterlimit="3.86874"
-    //     strokeLinecap="round"
-    //   />
-    // </svg>
+   
     <div className=" ">
       <div className="flex">
         <p className="skew-x-12 text-sm">_de</p><p className="text-sm skew-x-6">v</p><p className="text-sm skew-x-3">s</p><p className="text-sm -skew-x-3">p</p><p className="-skew-x-12 text-sm">ace</p>

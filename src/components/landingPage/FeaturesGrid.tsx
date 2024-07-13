@@ -1,11 +1,7 @@
 import React from "react";
 import { cn } from "@/src/lib/cn";
-import Image from "next/image";
 import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
-import Link from "next/link";
 import { Tweet } from "react-tweet";
 import { MacbookScrollEffect } from "./macbookScroll";
 
@@ -19,13 +15,7 @@ export function FeaturesSection() {
       className:
         "col-span-1 lg:col-span-6 border-b  border-neutral-400 dark:border-neutral-800",
     },
-    // {
-    //   title: "devspace in Action: gallery",
-    //   description:
-    //     "dive into the various features of devspace. from creating rooms to editing session details and browsing available projects, see how devspace makes collaboration effortless.",
-    //   skeleton: <SkeletonTwo />,
-    //   className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
-    // },
+
     {
       title: "learn more",
       description:
@@ -108,16 +98,9 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
 export const SkeletonOne = () => {
   return (
     <div className="relative flex py-8 mt-16 dark:mt-0 gap-10 h-full">
-      <div className="w-full p-0    mx-auto bg-white dark:bg-[#0B0B0F] bg-blue-600 shadow-2xl group h-full">
+      <div className="w-full p-0    mx-auto bg-white dark:bg-[#0B0B0F]  shadow-2xl group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
-          {/* TODO */}
-          {/* <Image
-            src="/img.png"
-            alt="header"
-            width={800}
-            height={800}
-            className="h-full w-full aspect-square object-cover object-left-top rounded-sm"
-          /> */}
+          
           <MacbookScrollEffect />
         </div>
       </div>
@@ -136,86 +119,6 @@ export const SkeletonThree = () => {
     
   );
 };
-
-// export const SkeletonTwo = () => {
-//   const images = [
-//     "/devspace\ gallery/landing-page.png",
-//     "/devspace\ gallery/browse-page.png",
-//     "/devspace\ gallery/search-room-page.png",
-//     "/devspace\ gallery/create-room-page.png",
-//     "/devspace\ gallery/my-room-page.png",
-//     "/devspace\ gallery/edit-room-page.png",
-//     "/devspace\ gallery/on-session-from-user1.png",
-//     "/devspace\ gallery/on-session-from-user2.png",
-//     "/devspace\ gallery/on-session-side-by-side.png",
- 
-//   ];
-
-//   const imageVariants = {
-//     whileHover: {
-//       scale: 1.1,
-//       rotate: 0,
-//       zIndex: 100,
-//     },
-//     whileTap: {
-//       scale: 1.1,
-//       rotate: 0,
-//       zIndex: 100,
-//     },
-//   };
-//   return (
-//     <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden">
-//       {/* TODO */}
-//       <div className="flex flex-row -ml-20">
-//         {images.map((image, idx) => (
-//           <motion.div
-//             variants={imageVariants}
-//             key={"images-first" + idx}
-//             style={{
-//               rotate: Math.random() * 20 - 10,
-//             }}
-//             whileHover="whileHover"
-//             whileTap="whileTap"
-//             className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
-//           >
-//             <Image
-//               src={image}
-//               alt="bali images"
-//               width="500"
-//               height="500"
-//               className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
-//             />
-//           </motion.div>
-//         ))}
-//       </div>
-//       <div className="flex flex-row">
-//         {images.map((image, idx) => (
-//           <motion.div
-//             key={"images-second" + idx}
-//             style={{
-//               rotate: Math.random() * 20 - 10,
-//             }}
-//             variants={imageVariants}
-//             whileHover="whileHover"
-//             whileTap="whileTap"
-//             className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden"
-//           >
-//             <Image
-//               src={image}
-//               alt="bali images"
-//               width="500"
-//               height="500"
-//               className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0"
-//             />
-//           </motion.div>
-//         ))}
-//       </div>
-
-//       <div className="absolute left-0 z-[100] inset-y-0 w-20 bg-gradient-to-r from-white dark:from-black to-transparent  h-full pointer-events-none" />
-//       <div className="absolute right-0 z-[100] inset-y-0 w-20 bg-gradient-to-l from-white dark:from-black  to-transparent h-full pointer-events-none" />
-//     </div>
-//   );
-// };
 
 export const SkeletonFour = () => {
   return (

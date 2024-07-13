@@ -1,6 +1,5 @@
 import React from "react";
 import { MacbookScroll } from "../ui/macbook-scroll";
-import Link from "next/link";
 
 export function MacbookScrollEffect() {
   return (
