@@ -19,7 +19,7 @@ export function SpaceCard ({space}: {space: Space}) {
       </CardHeader>
       <CardContent >
         <TagsList tags={SplitTags(space.tags)} />
-        {space.githubRepo && <Link href={space.githubRepo} className='flex items-center gap-2 mt-4' target='_blank' rel='noopener noreferrer'><GithubIcon /> Github URL</Link>
+        {space.githubRepo && <Link href={space.githubRepo} className='flex items-center gap-2 mt-4' target='_blank' rel='noopener noreferrer'><GithubIcon /> github URL</Link>
         }
       </CardContent>
       <CardFooter>

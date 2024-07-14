@@ -20,7 +20,7 @@ export default async function roomPage(props:{params: {roomid: string}}) {
     // const tags = space.tags.split(",").map((tag) => tag.trim());
 
     return (
-        <div className="grid grid-cols-4 min-h-screen">
+        <div className="grid grid-cols-4 min-h-screen  container px-5">
           <div className="col-span-3 p-4 pr-2">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4 min-h-screen">
               {/* <DevFinderVideo room={room} /> */}
@@ -43,7 +43,7 @@ export default async function roomPage(props:{params: {roomid: string}}) {
                   rel="noopener noreferrer"
                 >
                   <GithubIcon />
-                  Github URL 
+                  github URL 
                 </Link>
               )}
             </div>

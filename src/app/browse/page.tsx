@@ -12,9 +12,9 @@ export default async function Home ({searchParams}: {searchParams: {search: stri
   const spaces = await getSpaceSession(searchParams.search);
 
   return (
-    <main className=' min-h-screen justify-between p-24'>
+    <main className=' min-h-screen justify-between p-24 px-8 container '>
       <div className='flex justify-between items-center mb-8'>
-        <h1 className='text-4xl'>find dev <span className='text-indigo-600 font-semibold'> rooms</span></h1>
+        <h1 className='text-4xl'>find dev <span className='text-indigo-600 '> rooms</span></h1>
         <Button asChild>
           <Link href='/create-room'>create room</Link>
         </Button>
@@ -32,7 +32,7 @@ export default async function Home ({searchParams}: {searchParams: {search: stri
       {spaces.length === 0 && (
           <div className='flex flex-col gap-4 justify-center items-center mt-24'>
             <Image src='/notfound.svg' width={200} height={200} alt='no data imgage'/>
-            <h2 className='text-2xl'>No Rooms Yet!!</h2>
+            <h2 className='text-2xl'>no rooms yet!!</h2>
             <Button asChild>
               <Link href='/create-room'>create room</Link>
             </Button>

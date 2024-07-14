@@ -44,7 +44,7 @@ export function UserSpaceCard ({ space }: { space: Space }) {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <GithubIcon /> Github URL
+            <GithubIcon /> github URL
           </Link>
         )}
       </CardContent>

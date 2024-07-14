@@ -90,7 +90,7 @@ export function Header () {
         {isLoggedIn && (
           <div className='flex gap-8'>
             <Link className='hover:underline' href={"/browse"}>browse</Link>
-            <Link className='hover:underline' href={"/user-rooms"}>my Rooms</Link>
+            <Link className='hover:underline' href={"/user-rooms"}>my rooms</Link>
           </div>
         )}
         <div className='flex items-center gap-4'>
