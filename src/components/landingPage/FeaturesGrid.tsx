@@ -148,7 +148,7 @@ export const Globe = ({ className }: { className?: string }) => {
       mapBrightness: 6,
       baseColor: [0.3, 0.3, 0.3],
       markerColor: [0.1, 0.8, 1],
-      glowColor: [1, 1, 1],
+      glowColor: [0.2, 0.2, 0.2],
       markers: [
         // longitude latitude
         { location: [37.7595, -122.4367], size: 0.03 },

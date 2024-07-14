@@ -39,13 +39,13 @@ export default function LandingPage () {
         </div>
        
         {/* globe section */}
-        <div className=' bg-black w-full '>
+        <div className='  w-full '>
           <div className='container flex flex-col lg:flex-row justify-center'>
               <div className='w-full flex flex-col justify-center gap-3 items-center z-0  '>
-                <h2 className='font-bold text-center text-gray-50 text-3xl sm:text-4xl md:text-5xl lg:text-5xl'>
+                <h2 className=' text-center dark:text-gray-50 text-3xl sm:text-4xl md:text-5xl lg:text-5xl'>
                   find, connect, collaborate
                 </h2>
-                <p className='text-gray-50 text-base sm:text-lg md:text-xl'>
+                <p className='dark:text-gray-50 text-base sm:text-lg md:text-xl'>
                   and have fun while learning!
                 </p>
               </div>
@@ -57,9 +57,15 @@ export default function LandingPage () {
 
         {/* how it works section */}
         <div className='container flex flex-col gap-28  my-28 '>
-          <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-            how it works
-          </h4>
+        <div className="px-8">
+        <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
+          how it works
+        </h4>
+
+        <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-gray-500 dark:text-gray-400 text-center font-normal ">
+          see how you can easily find, create, and join coding sessions to collaborate with other developers. explore the seamless process of pairing up with fellow developers and enhancing your coding skills together.
+        </p>
+      </div>
           <HowToCard />
         </div>
         {/* need more info section */}

@@ -9,15 +9,15 @@ const World = dynamic(() => import("./ui/globe").then((m) => m.World), {
 export function GlobeDemo() {
   const globeConfig = {
     pointSize: 4,
-    globeColor: "#062056",
+    globeColor: "#000000",
     showAtmosphere: true,
-    atmosphereColor: "#FFFFFF",
-    atmosphereAltitude: 0.1,
-    emissive: "#062056",
-    emissiveIntensity: 0.1,
+    atmosphereColor: "#888888",
+    atmosphereAltitude: 0.16,
+    emissive: "#3a3a3a",
+    emissiveIntensity: 0.2,
     shininess: 0.9,
-    polygonColor: "rgba(255,255,255,0.7)",
-    ambientLight: "#38bdf8",
+    polygonColor: "rgb(255, 255, 255)",
+    ambientLight: "#a1a1a1",
     directionalLeftLight: "#ffffff",
     directionalTopLight: "#ffffff",
     pointLight: "#ffffff",
@@ -392,12 +392,13 @@ export function GlobeDemo() {
       color: colors[Math.floor(Math.random() * (colors.length - 1))],
     },
   ];
+  const onDarkColor = "#000000";
 
   return (
-    <div className="flex flex-row items-center justify-center sm:py-0 md:py-10 h-screen md:h-auto bg-black px-25  relative w-full">
+    <div className="flex flex-row items-center justify-center sm:py-0 md:py-10 h-screen md:h-auto  px-25  relative w-full">
       <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-4">
         
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-black  z-40" />
+        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent to-gray-200 dark:to-black  z-40" />
         <div className="absolute w-full  h-72 md:h-full z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
         </div>

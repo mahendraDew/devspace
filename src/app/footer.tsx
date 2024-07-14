@@ -1,8 +1,7 @@
 export function Footer () {
   return (
     <footer className="w-full py-4 text-center text-gray-500 dark:text-gray-400 relative z-30 mt-5 mb-0">
-        <span>
-        made by{' '}
+        <span> &copy; 2024 _devspace. all rights reserved. |  build by{' '}
         <a
             href="https://twitter.com/mahendra_dew"
             target="_blank"

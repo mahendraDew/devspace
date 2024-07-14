@@ -86,7 +86,7 @@ export function Header () {
   return (
     <header className='bg-gray-500 bg-opacity-5 py-4  dark:bg-neutral-950 dark:bg-opacity-70 z-10 relative'>
       <div className='container mx auto flex justify-between items-center'>
-        <Link href="/" className='font-bold text-4xl text-neutral-800 dark:text-neutral-200' >_dev<span className='text-indigo-600'>space</span></Link>
+        <Link href="/" className=' text-4xl text-neutral-800 dark:text-neutral-200' >_dev<span className='text-indigo-600'>space</span></Link>
         {isLoggedIn && (
           <div className='flex gap-8'>
             <Link className='hover:underline' href={"/browse"}>browse</Link>
