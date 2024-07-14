@@ -41,7 +41,7 @@ export default function LandingPage () {
         {/* globe section */}
         <div className='  w-full '>
           <div className='container flex flex-col lg:flex-row justify-center'>
-              <div className='w-full flex flex-col justify-center gap-3 items-center z-0  '>
+              <div className='w-full flex flex-col justify-center gap-3 items-center relative z-0  '>
                 <h2 className=' text-center dark:text-gray-50 text-3xl sm:text-4xl md:text-5xl lg:text-5xl'>
                   find, connect, collaborate
                 </h2>
