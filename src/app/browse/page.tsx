@@ -12,7 +12,7 @@ export default async function Home ({searchParams}: {searchParams: {search: stri
   const spaces = await getSpaceSession(searchParams.search);
 
   return (
-    <main className=' min-h-screen justify-between p-24 px-8 container '>
+    <main className=' min-h-screen justify-between p-24 px-10 md:px-8 container '>
       <div className='flex justify-between items-center mb-8'>
         <h1 className='text-4xl'>find dev <span className='text-indigo-600 '> rooms</span></h1>
         <Button asChild>
@@ -23,7 +23,7 @@ export default async function Home ({searchParams}: {searchParams: {search: stri
         <SearchBar />
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {spaces.map(space => {
           return <SpaceCard key={space.id} space={space} />
         })}

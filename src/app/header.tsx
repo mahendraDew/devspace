@@ -52,15 +52,16 @@ function AccountDropdown () {
         </AlertDialog>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant={'outline'}>
-          <Avatar className='mr-2'>
+        <Button variant={'outline'} className='w-0 md:w-full rounded-full md:rounded-lg'>
+          <Avatar className='mr-0 md:mr-2 '>
             <AvatarImage src={session.data?.user?.image ?? ''} />
             <AvatarFallback>
              <User />
             </AvatarFallback>
           </Avatar>
-
+          <span className='hidden md:block '>
           {session.data?.user?.name}
+          </span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
@@ -119,8 +120,8 @@ const MobileNav = ({
       <div className='container flex flex-col items-center  h-[80vh]  gap-52 relative z-40 '>
             {isLoggedIn && (
             <div className='flex flex-col text-2xl justify-center items-center gap-28 mt-20 '>
-                <Link className='hover:underline' href={"/browse"}>browse</Link>
-                <Link className='hover:underline' href={"/user-rooms"}>my rooms</Link>
+                <Link className='hover:underline' onClick={() => setOpen(!open)} href={"/browse"}>browse</Link>
+                <Link className='hover:underline' onClick={() => setOpen(!open)} href={"/user-rooms"}>my rooms</Link>
             </div>
             )}
             {!isLoggedIn && (
@@ -163,7 +164,7 @@ export default function Header () {
                     <AccountDropdown />}
                 {!isLoggedIn &&
                     <Button onClick={() => signIn("github", { callbackUrl: '/browse' })} variant='outline'>
-                    <LogInIcon  />
+                      <LogInIcon  />
                     </Button>
                 }
                 <ModeToggle />

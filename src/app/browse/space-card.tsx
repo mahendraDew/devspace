@@ -10,19 +10,17 @@ import { Button } from '../../components/ui/button';
 
 export function SpaceCard ({space}: {space: Space}) {
   return (
-    <Card>
-      <CardHeader>
+    <Card className='flex flex-col '>
+      <CardHeader className=' h-full'>
         <CardTitle>{space.name}</CardTitle>
         <CardDescription>{space.description}</CardDescription>
-        
-
       </CardHeader>
-      <CardContent >
+      <CardContent className='flex flex-col justify-end  h-full'>
         <TagsList tags={SplitTags(space.tags)} />
-        {space.githubRepo && <Link href={space.githubRepo} className='flex items-center gap-2 mt-4' target='_blank' rel='noopener noreferrer'><GithubIcon /> github URL</Link>
+        {space.githubRepo && <Link href={space.githubRepo} className='flex   items-center gap-2 mt-4' target='_blank' rel='noopener noreferrer'><GithubIcon /> github URL</Link>
         }
       </CardContent>
-      <CardFooter>
+      <CardFooter className=' h-20'>
           <Button asChild>
             <Link href={`/room/${space.id}`}>
               join room

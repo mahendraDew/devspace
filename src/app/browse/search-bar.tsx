@@ -51,7 +51,7 @@ export function SearchBar(){
                   <Input
                     {...field}
                     placeholder='Filter rooms by keywords like "react", "typescript", "nodejs" etc.'
-                    className='w-[440px]'
+                    className='w-[270px] md:w-[440px] lg:w-[600px]'
                   />
                 </FormControl>
                 <FormMessage />

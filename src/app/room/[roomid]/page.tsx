@@ -20,8 +20,8 @@ export default async function roomPage(props:{params: {roomid: string}}) {
     // const tags = space.tags.split(",").map((tag) => tag.trim());
 
     return (
-        <div className="grid grid-cols-4 min-h-screen  container px-5">
-          <div className="col-span-3 p-4 pr-2">
+        <div className="grid grid-cols-1 md:grid-cols-4 min-h-screen container px-5">
+          <div className="col-span-1 md:col-span-3 p-4 pr-2">
             <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-4 min-h-screen">
               {/* <DevFinderVideo room={room} /> */}
                <DevspaceVideo space={space}/>

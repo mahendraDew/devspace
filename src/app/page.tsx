@@ -9,7 +9,7 @@ import { FeaturesSection } from '../components/landingPage/FeaturesGrid'
 export default function LandingPage () {
   return (
     <div className=''>
-      <div className='relative isolate  pt-14 '>
+      <div className='relative isolate  pt-14 scroll-smooth'>
         {/* hero section  */}
 
         <div className='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
