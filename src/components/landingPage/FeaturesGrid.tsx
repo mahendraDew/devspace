@@ -4,6 +4,7 @@ import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { Tweet } from "react-tweet";
 import { MacbookScrollEffect } from "./macbookScroll";
+import RevealOnScroll from "../ui/RevealOnScroll";
 
 export function FeaturesSection() {
   const features = [
@@ -35,13 +36,16 @@ export function FeaturesSection() {
   return (
     <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
       <div className="px-8">
-        <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
-          packed with thousands of features
-        </h4>
-
-        <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-gray-500 dark:text-gray-400 text-center font-normal ">
-        from creating rooms to collaborating on code, devspace has everything you need for effective pair programming. connect with developers worldwide, share your screen, and take your coding skills to the next level.
-        </p>
+        <RevealOnScroll duration={150}>
+          <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
+            packed with thousands of features
+          </h4>
+        </RevealOnScroll>
+        <RevealOnScroll duration={500}>
+          <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-gray-500 dark:text-gray-400 text-center font-normal ">
+          from creating rooms to collaborating on code, devspace has everything you need for effective pair programming. connect with developers worldwide, share your screen, and take your coding skills to the next level.
+          </p>
+        </RevealOnScroll>
       </div>
 
       <div className="relative ">
@@ -75,23 +79,27 @@ const FeatureCard = ({
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p className=" max-w-5xl text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug">
-      {children}
-    </p>
+    <RevealOnScroll duration={400}>
+      <p className=" max-w-5xl text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug">
+        {children}
+      </p>
+    </RevealOnScroll>
   );
 };
 
 const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <p
-      className={cn(
-        "text-base  max-w-4xl text-left mx-auto",
-        " text-center font-normal text-gray-500 dark:text-gray-400",
-        "text-left max-w-sm mx-0 md:text-base my-2"
-      )}
-    >
-      {children}
-    </p>
+    <RevealOnScroll duration={800}>
+      <p
+        className={cn(
+          "text-base  max-w-4xl text-left mx-auto",
+          " text-center font-normal text-gray-500 dark:text-gray-400",
+          "text-left max-w-sm mx-0 md:text-base my-2"
+        )}
+      >
+        {children}
+      </p>
+    </RevealOnScroll>
   );
 };
 
@@ -100,7 +108,6 @@ export const SkeletonOne = () => {
     <div className="relative flex py-8 mt-16 dark:mt-0 gap-10 h-full">
       <div className="w-full p-0    mx-auto bg-white dark:bg-[#0B0B0F]  shadow-2xl group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
-          
           <MacbookScrollEffect />
         </div>
       </div>
