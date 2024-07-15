@@ -151,14 +151,14 @@ export default function Header () {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className='flex filter drop-shadow-md bg-white dark:bg-neutral-950 px-4 py-4 h-14 md:h-20 items-center relative z-50' >
+    <nav className='flex filter drop-shadow-md bg-white dark:bg-neutral-950 px-0 md:px-4 py-4 h-14 md:h-20 items-center relative z-50' >
       <MobileNav open={open} setOpen={setOpen} />
-      <div className='container flex flex-row justify-center items-center'>
+      <div className='container flex flex-row justify-between px-3 md:px-10 md:justify-center items-center '>
 
-        <div className='w-3/12 flex items-center '>
-            <Link href="/" className='text-3xl md:text-4xl text-neutral-800 dark:text-neutral-200' >_dev<span className='text-indigo-600'>space</span></Link>
+        <div className='md:w-3/12 flex items-center '>
+            <Link href="/" className='text-lg md:text-3xl lg:text-4xl text-neutral-800 dark:text-neutral-200' >_dev<span className='text-indigo-600'>space</span></Link>
         </div>
-        <div className='w-9/12 flex justify-end items-center gap-6'>
+        <div className='md:w-9/12 flex justify-end items-center gap-6'>
             <div className='md:hidden  flex justify-center items-center gap-4'>
                 {isLoggedIn &&
                     <AccountDropdown />}

@@ -10,9 +10,9 @@ import RevealOnScroll from '../components/ui/RevealOnScroll'
 export default function LandingPage () {
   return (
     <div className=''>
-      <div className='relative isolate  pt-14 scroll-smooth'>
+      <div className='relative isolate md:pt-14 scroll-smooth'>
         {/* hero section  */}
-        <div className='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
+        <div className='mx-auto max-w-2xl px-4  flex flex-col md:px-0 py-32 sm:py-48 lg:py-56'>
           <div className='text-center cursor-default'>
             <RevealOnScroll duration={150}>
               <h1 className='text-4xl  tracking-tight dark:text-gray-100 sm:text-6xl'>
@@ -44,8 +44,8 @@ export default function LandingPage () {
           </div>
         </div>
         {/* globe section */}
-        <div className='  w-full '>
-          <div className='container flex flex-col lg:flex-row justify-center'>
+        <div className='  w-full'>
+          <div className='container flex flex-col px-4 md:px-0 lg:flex-row justify-center'>
             <div className='w-full flex flex-col justify-center gap-3 items-center relative z-0  '>
               <RevealOnScroll duration={300}>
                 <h2 className=' text-center dark:text-gray-50 text-3xl sm:text-4xl md:text-5xl lg:text-5xl'>
@@ -58,7 +58,7 @@ export default function LandingPage () {
                 </p>
               </RevealOnScroll>
             </div>
-            <div className='w-full z-10'>
+            <div className='w-full z-10 '>
               <GlobeDemo />
             </div>
           </div>
