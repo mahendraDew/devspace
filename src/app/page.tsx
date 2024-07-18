@@ -53,7 +53,7 @@ export default function LandingPage () {
         </div>
         {/* how it works section */}
         <div className='container flex flex-col gap-28  my-28 lg:mt-96'>
-          <div className='px-8'>
+          <div className='md:px-8'>
             <h4 className='text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white'>
               how it works
             </h4>
@@ -71,9 +71,9 @@ export default function LandingPage () {
             <FeaturesSection />
           </div> */}
         <div className='container w-auto max-w-3xl'>
-            <div className='px-8'>
+            <div className='md:px-8'>
               <h4 className='text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white'>
-                faq's
+                faq&apos;s
               </h4>
               <p className='text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-gray-500 dark:text-gray-400 text-center font-normal '>
               find answers to common questions about _devspace. if you have more queries, feel free to reach out us <span className="text-gray-700 dark:text-gray-300 dark:hover:text-gray-50 underline hover:text-gray-900"> <a href="https://twitter.com/mahendra_dew">here</a></span>.

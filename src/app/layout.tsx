@@ -23,6 +23,9 @@ export default function RootLayout ({
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
+       <head>
+        <meta charSet="UTF-8" />
+      </head>
       <SessionWrapper>
        <body className={`${inter.className} bg-gray-200 dark:bg-black`}>
           <ThemeProvider
