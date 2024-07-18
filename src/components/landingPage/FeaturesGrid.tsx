@@ -4,7 +4,6 @@ import createGlobe from "cobe";
 import { useEffect, useRef } from "react";
 import { Tweet } from "react-tweet";
 import { MacbookScrollEffect } from "./macbookScroll";
-import RevealOnScroll from "../ui/RevealOnScroll";
 
 export function FeaturesSection() {
   const features = [
@@ -36,16 +35,12 @@ export function FeaturesSection() {
   return (
     <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
       <div className="px-8">
-        <RevealOnScroll duration={150}>
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
             packed with thousands of features
           </h4>
-        </RevealOnScroll>
-        <RevealOnScroll duration={500}>
           <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-gray-500 dark:text-gray-400 text-center font-normal ">
           from creating rooms to collaborating on code, devspace has everything you need for effective pair programming. connect with developers worldwide, share your screen, and take your coding skills to the next level.
           </p>
-        </RevealOnScroll>
       </div>
 
       <div className="relative ">
@@ -79,17 +74,14 @@ const FeatureCard = ({
 
 const FeatureTitle = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <RevealOnScroll duration={400}>
       <p className=" max-w-5xl text-left tracking-tight text-black dark:text-white text-xl md:text-2xl md:leading-snug">
         {children}
       </p>
-    </RevealOnScroll>
   );
 };
 
 const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <RevealOnScroll duration={800}>
       <p
         className={cn(
           "text-base  max-w-4xl text-left mx-auto",
@@ -99,7 +91,6 @@ const FeatureDescription = ({ children }: { children?: React.ReactNode }) => {
       >
         {children}
       </p>
-    </RevealOnScroll>
   );
 };
 
