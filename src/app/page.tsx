@@ -4,7 +4,6 @@ import React from 'react'
 import { Waitlist } from '../components/landingPage/backgroundBeam'
 import { GlobeDemo } from '../components/github-globe'
 import { HowToCard } from '../components/landingPage/HowToCards'
-import { FeaturesSection } from '../components/landingPage/FeaturesGrid'
 export default function LandingPage () {
   return (
     <div className=''>
