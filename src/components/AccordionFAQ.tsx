@@ -13,13 +13,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
         <AccordionItem value="item-2">
           <AccordionTrigger>2. what is pair programming?</AccordionTrigger>
           <AccordionContent className='text-sm lg:text-base text-gray-500 dark:text-gray-400 font-normal '>
-          pair programming is a development technique where two programmers work side-by-side on the same codebase. one acts as the "driver" who writes the code, while the other, the "navigator," reviews each line of code and provides guidance. this collaborative approach helps catch errors early, promotes knowledge sharing, and enhances teamwork skills.
+          pair programming is a development technique where two programmers work side-by-side on the same codebase. one acts as the &quot;driver&quot; who writes the code, while the other, the &quot;navigator&quot;, reviews each line of code and provides guidance. this collaborative approach helps catch errors early, promotes knowledge sharing, and enhances teamwork skills.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
           <AccordionTrigger>3. how do I create a room on devspace?</AccordionTrigger>
           <AccordionContent className='text-sm lg:text-base  text-gray-500 dark:text-gray-400  font-normal '>
-          creating a room on devspace is simple. after logging in, navigate to the "create room" section, fill in the necessary details such as room name, description, and tags, and click "create." you can then invite other developers to join your room and start collaborating.
+          creating a room on devspace is simple. after logging in, navigate to the &quot;create room&quot; section, fill in the necessary details such as room name, description, and tags, and click &quot;create&quot;. you can then invite other developers to join your room and start collaborating.
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4">
