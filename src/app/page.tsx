@@ -4,6 +4,7 @@ import React from 'react'
 import { Waitlist } from '../components/landingPage/backgroundBeam'
 import { GlobeDemo } from '../components/github-globe'
 import { HowToCard } from '../components/landingPage/HowToCards'
+import { AccordionFAQ } from '../components/AccordionFAQ'
 export default function LandingPage () {
   return (
     <div className=''>
@@ -41,8 +42,8 @@ export default function LandingPage () {
               <h2 className=' text-center dark:text-gray-50 text-3xl sm:text-4xl md:text-5xl lg:text-5xl'>
                 find, connect, collaborate
               </h2>
-              <p className='dark:text-gray-50 text-base sm:text-lg md:text-xl'>
-                and have fun while learning!
+              <p className='text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-gray-500 dark:text-gray-400 text-center font-normal '>
+              discover new opportunities, enhance your skills,  enjoy the journey and at the end have fun while learning!
               </p>
             </div>
             <div className='w-full z-10 '>
@@ -69,6 +70,18 @@ export default function LandingPage () {
         {/* <div className='py-28 flex flex-col justify-center items-center my-28 gap-28  '>
             <FeaturesSection />
           </div> */}
+        <div className='container w-auto max-w-3xl'>
+            <div className='px-8'>
+              <h4 className='text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white'>
+                faq's
+              </h4>
+              <p className='text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-gray-500 dark:text-gray-400 text-center font-normal '>
+              find answers to common questions about _devspace. if you have more queries, feel free to reach out us <span className="text-gray-700 dark:text-gray-300 dark:hover:text-gray-50 underline hover:text-gray-900"> <a href="https://twitter.com/mahendra_dew">here</a></span>.
+              </p>
+            </div>
+            <AccordionFAQ />
+        </div>
+       
         {/* waitlist section */}
         <div id='waitlist'>
           <Waitlist />

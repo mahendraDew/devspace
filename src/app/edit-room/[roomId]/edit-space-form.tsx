@@ -124,7 +124,7 @@ export function EditSpaceForm ({room}:{room: Space}) {
             </FormItem>
           )}
         />
-        <Button type='submit'>Submit</Button>
+        <Button type='submit'>submit</Button>
       </form>
     </Form>
   )

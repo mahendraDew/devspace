@@ -122,7 +122,7 @@ export function CreateSpaceForm () {
             </FormItem>
           )}
         />
-        <Button type='submit'>Submit</Button>
+        <Button type='submit'>create</Button>
       </form>
     </Form>
   )
