@@ -1,6 +1,6 @@
 # _devspace
 
-Welcome to **_devspace**, an innovative pair programming platform designed to seamlessly connect developers across the globe. Whether you're looking to collaborate on a project, improve your coding skills, or network with other developers, devsapce offers the tools and community to help you achieve your goals. <br /> <br/> Check out **_devspace** [here](https://devspace-ar3n.onrender.com/)
+Welcome to **_devspace**, an innovative pair programming platform designed to seamlessly connect developers across the globe. Whether you're looking to collaborate on a project, improve your coding skills, or network with other developers, devspace offers the tools and community to help you achieve your goals. <br /> <br/> Check out **_devspace** [here](https://thedevspace.tech)
 
 
 ## 🚀 Features
@@ -98,7 +98,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Ready to start coding? [Join devspace today](https://devspace-ar3n.onrender.com/) and take your development skills to the next level!
+Ready to start coding? [Join devspace today](https://thedevspace.tech/) and take your development skills to the next level!
 
 ---
 
