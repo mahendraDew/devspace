@@ -1,6 +1,5 @@
 "use client"
 import { SessionProvider } from "next-auth/react"
-import { ReactNode } from "react"
 
 const SessionWrapper = ({children}: {children: React.ReactNode}) => {
     return (
@@ -10,4 +9,4 @@ const SessionWrapper = ({children}: {children: React.ReactNode}) => {
     )
 }
 
-export default SessionWrapper
+export default SessionWrapper;

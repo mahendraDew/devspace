@@ -77,7 +77,7 @@ export function CreateSpaceForm () {
                 />
               </FormControl>
               <FormDescription>
-                Please describe what you`&quot;`ll be working on.
+                Please describe what you&quot;ll be working on.
               </FormDescription>
               <FormMessage />
             </FormItem>
