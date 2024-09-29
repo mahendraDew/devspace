@@ -13,10 +13,10 @@ Welcome to **_devspace**, an innovative pair programming platform designed to se
 ## 🛠️ Tech Stack
 
 - **Frontend:** Next.js, TypeScript, TailwindCSS
-- **Backend:** Node.js, Express
+- **Backend:** Node.js, Express, Next.js
 - **Database:** PostgreSQL with Drizzle ORM
 - **Authentication:** NextAuth, OAuth (GitHub)
-- **Deployment:** Render.com
+- **Deployment:** Render, vercel
 
 ## 🌟 Why _devspace?
 
@@ -59,10 +59,24 @@ devspace isn’t just for beginners. Experienced developers can also benefit by:
     ```env
     DATABASE_URL=your_postgresql_database_url
     NEXTAUTH_URL=your_deployment_url
-    GITHUB_CLIENT_ID=your_github_client_id
-    GITHUB_CLIENT_SECRET=your_github_client_secret
+    GITHUB_ID=your_github_client_id
+    GITHUB_GITHUB_SECRETCLIENT_SECRET=your_github_client_secret
+    NEXTAUTH_SECRET="your_super_secret_next_auth_secret"
+    NEXT_PUBLIC_GET_STREAM_API_KEY=your_Get_Stream_api_key
+    GET_STREAM_SECRET_KEY="your_Get_Stream_Secret_Key"
     ```
-
+    - for local development you can use the NEXTAUTH_URL as:
+        ```
+        NEXTAUTH_URL=http://localhost:3000
+        ```
+    - for NEXTAUTH_SECRET you can run any of the following command (run on your terminal)
+        ```
+        node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+        ```
+        You can quickly create a good value on the command line via this openssl command.
+        ```
+        $ openssl rand -base64 32
+        ```
 4. **Run the development server:**
     ```bash
     npm run dev
